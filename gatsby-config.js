@@ -9,7 +9,6 @@ module.exports = {
   pathPrefix: "/",
   plugins: [
     {
-      pathPrefix: "/",
       resolve: `gatsby-plugin-typography`,
       options: {
         pathToConfigModule: `src/utils/typography`,
