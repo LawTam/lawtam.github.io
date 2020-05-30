@@ -5,10 +5,10 @@ import topnavStyles from "./topnav.module.css"
 export default function TopNav(props) {
   return (
     <>
-    <div>
-        <Link to="/contact/">Contact</Link>
-        <Link to="/work/">Work</Link>
-        <Link to="/art/">Art</Link>
+    <div className={topnavStyles.container}>
+        <Link to="/work/" className={topnavStyles.link}>Work</Link>
+        <Link to="/art/" className={topnavStyles.link}>Art</Link>
+        <Link to="/contact/" className={topnavStyles.link}>Contact</Link>
     </div>
     </>
   )

@@ -8,3 +8,5 @@ This design document describes the design of Lawrence's online portfolio that wi
 2. Home Page
 3. Experience
 4. About Me
+
+## 1. Top Navigation Bar
