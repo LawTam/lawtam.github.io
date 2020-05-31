@@ -18,7 +18,7 @@ export default function Home() {
       <div style={{ color: `purple`, overflowY: 'hidden', padding: "20px"}}> Left click + drag to rotate. Right click + drag to move. Scroll for zoom.</div>
       <Canvas 
         style={{position: 'absolute', top: '0', height: '100vh', zIndex: '-1' }}
-        camera= {{ position:[0, 0, 5] }}
+        camera= {{ position:[0, 0.5, 3] }}
         onCreated={({ gl }) => {
           gl.shadowMap.enabled = true
           gl.shadowMap.type = THREE.PCFSoftShadowMap
