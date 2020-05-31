@@ -9,13 +9,12 @@ import welcomeStamp from '../assets/models/welcome.glb'
 import Header from "../components/header"
 import TopNav from "../components/navigation/topnav"
 
-export default function Home() {
+export default function ReactThreeFiberTest() {
   return (
     <div style={{ color: `purple`, overflowY: 'hidden'}}>
       <TopNav />
       <Header headerText="Welcome to my portfolio!" />
-      <div style={{ color: `purple`, overflowY: 'hidden', padding: "20px"}}> This version 2 of the portfolio is still in construction. It will be a React/Gatsby App featuring three.js, a 3d graphics API. Stay tuned! </div>
-      <div style={{ color: `purple`, overflowY: 'hidden', padding: "20px"}}> Left click + drag to rotate. Right click + drag to move. Scroll for zoom.</div>
+      <div> This version 2 of the portfolio is still in construction. It will be a React/Gatsby App featuring three.js, a 3d graphics API. Stay tuned! </div>
       <Canvas 
         style={{position: 'absolute', top: '0', height: '100vh', zIndex: '-1' }}
         camera= {{ position:[0, 0, 5] }}
@@ -26,9 +25,9 @@ export default function Home() {
       >
         <Suspense fallback={<Dom center className="loading" children="Loading..." />}>
           <fog attach="fog" args={["white", 10, 20]}/>
-          <pointLight position={[0, 2, 0]} color="white" />
-          <pointLight position={[0, 2, 10]} color="silver" />
-          <pointLight position={[0, 2, -10]} color="white" />
+          <spotLight position={[10, 10, 10]} castShadow/>
+          <Box position={[-1.2, 0, 0]} />
+          <Box position={[1.2, 0, 0]} />
           <Plane />
           <WelcomeLogo />
         </Suspense>
@@ -46,7 +45,7 @@ const WelcomeLogo = () => {
     new GLTFLoader().load(welcomeStamp, setModel);
   })
   //console.log(model);
-  return model ? <primitive object={model.scene} /> : null
+  return null;
 }
 
 const Plane = () => (
