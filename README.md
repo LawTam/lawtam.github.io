@@ -1,7 +1,7 @@
 # Design Document
 
 ## Introduction
-This design document describes the design of Lawrence's online portfolio that will be build using React and Gatsby. 
+This design document describes the design of Lawrence's online portfolio that will be built using React and Gatsby. 
 
 ## Table of Contents
 0. Set up
@@ -13,9 +13,17 @@ This design document describes the design of Lawrence's online portfolio that wi
 ## 0. Set Up
 Style guide: 
 - color: 0xDF3032
-- typography.js: Ocean Beach theme
+- accent font: federant
+- text font: open sans
 
 ## 1. Top Navigation Bar
+* features a logo and navigation links
+* logo
+    - currently svg
+    - considering changing logo to threeJS using React-Three-Fiber
+* nav links
+    - Projects, About, Contact
+    - created with Gatsby Link API
 
 ## 2. Home Page
 * features threeJS logo using React-Three-Fiber
@@ -25,3 +33,4 @@ Style guide:
     - added lighting
     - added fog
 https://www.youtube.com/watch?v=1rP3nNY2hTo
+

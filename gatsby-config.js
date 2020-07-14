@@ -3,7 +3,7 @@
  *
  * See: https://www.gatsbyjs.org/docs/gatsby-config/
  */
-
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 module.exports = {
   /* Your site config here */
   pathPrefix: "/",
@@ -13,6 +13,7 @@ module.exports = {
       options: {
         pathToConfigModule: `src/utils/typography`,
       },
+
     },
   ],
 }
