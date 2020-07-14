@@ -26,13 +26,13 @@ exports.onCreateWebpackConfig = ({
             test: /\.(glb|gltf)$/,
             use:
             [
+              {
+                loader: 'file-loader',
+                options:
                 {
-                    loader: 'file-loader',
-                    options:
-                    {
-                        outputPath: 'assets/models/'
-                    }
+                  outputPath: 'assets/models/'
                 }
+              }
             ]
             },
         ],

@@ -7,7 +7,7 @@ import { OrbitControls, draco } from 'drei'
 import welcomeStamp from '../assets/models/welcome.glb'
 
 import Header from "../components/header"
-import TopNav from "../components/navigation/topnav"
+import TopNav from "../components/navigation/TopNav"
 
 export default function ReactThreeFiberTest() {
   return (

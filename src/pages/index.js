@@ -1,4 +1,5 @@
 import React, { useRef, useState, Suspense, useEffect } from "react"
+import styled from "styled-components"
 import { Canvas, Dom, useLoader, useFrame, useThree, extend} from "react-three-fiber"
 import * as THREE from 'three'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
@@ -6,16 +7,38 @@ import { DRACOLoader } from 'three/examples/jsm/loaders/DRACOLoader'
 import { OrbitControls, draco } from 'drei'
 import welcomeStamp from '../assets/models/welcome.glb'
 
-import TopNav from "../components/navigation/topnav"
-import Introduction from '../components/personal_intro'
+import TopNav from "../components/navigation/TopNav"
+import Introduction from '../components/PersonalIntro'
+import SocialMedia from "../components/navigation/SocialMedia"
+import law_blkwht from "../assets/2D/lawrence_fullbody_blkwht.png"
 
+const Page = styled.div`
+  color: purple;
+  overflowY: hidden;
+  
+`;
+
+const Lawrence = styled.img`
+  position: absolute;
+  bottom: -40vh;
+  right: -90px;
+  margin: 0;
+  height: 110vh;
+  transform: rotate(3deg);
+  width: auto;
+  z-index: -1;
+`;
 
 export default function Home() {
   return (
-    <div style={{ color: `purple`, overflowY: 'hidden'}}>
-      <TopNav />
-      <Introduction />
-    </div>
+    <>
+      <Page id="Home" className="noselect">
+        <TopNav />
+        <Introduction />
+        <SocialMedia />
+        <Lawrence src= {law_blkwht}></Lawrence>
+      </Page>
+    </>
   )
 }
 

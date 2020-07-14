@@ -1,7 +1,6 @@
 .container {
-    position: absolute;
-    top: 0;
     padding-top: 80px;
+    padding-bottom: 80px;
     width: 100%;
     text-align: center;
 }
@@ -12,4 +11,8 @@
     font-family: "Open Sans Regular";
     font-size: 14px;
     color: black;
+
+    :hover{
+        color:#d12a2c;
+    }
 }

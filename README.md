@@ -13,7 +13,8 @@ This design document describes the design of Lawrence's online portfolio that wi
 
 ## Set Up
 ### Style guide: 
-- color: 0xDF3032
+- accent color: #d12a2c
+- text color: #000000
 - accent font: federant
 - text font: open sans
 
