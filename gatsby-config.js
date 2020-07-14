@@ -13,7 +13,10 @@ module.exports = {
       options: {
         pathToConfigModule: `src/utils/typography`,
       },
-
+      MiniCssExtractPlugin: {
+        filename: isDevelopment ? '[name].css' : '[name].[hash].css',
+        chunkFilename: isDevelopment ? '[id].css' : '[id].[hash].css'
+      },
     },
   ],
 }

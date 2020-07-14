@@ -11,10 +11,14 @@ This design document describes the design of Lawrence's online portfolio that wi
 4. About Me
 
 ## 0. Set Up
-Style guide: 
+### Style guide: 
 - color: 0xDF3032
 - accent font: federant
 - text font: open sans
+
+### Configuring SCSS modules for Webpack
+https://developerhandbook.com/webpack/how-to-configure-scss-modules-for-webpack/
+
 
 ## 1. Top Navigation Bar
 * features a logo and navigation links
