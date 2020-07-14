@@ -4,20 +4,22 @@ import * as THREE from 'three'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 import { DRACOLoader } from 'three/examples/jsm/loaders/DRACOLoader'
 import { OrbitControls, draco } from 'drei'
-import welcomeStamp from '../assets/models/welcome.glb'
+import welcomeStamp from '../../assets/models/welcome.glb'
 
-import Header from "../components/header"
-import TopNav from "../components/navigation/TopNav"
+import Header from "../../components/header"
+import TopNav from "../../components/navigation/TopNav"
 
 export default function ReactThreeFiberTest() {
   return (
+    <>
     <div style={{ color: `purple`, overflowY: 'hidden'}}>
       <TopNav />
       <Header headerText="Welcome to my portfolio!" />
-      <div> This version 2 of the portfolio is still in construction. It will be a React/Gatsby App featuring three.js, a 3d graphics API. Stay tuned! </div>
+      <div style={{ color: `purple`, overflowY: 'hidden', padding: "20px"}}> This version 2 of the portfolio is still in construction. It will be a React/Gatsby App featuring three.js, a 3d graphics API. Stay tuned! </div>
+      <div style={{ color: `purple`, overflowY: 'hidden', padding: "20px"}}> Left click + drag to rotate. Right click + drag to move. Scroll for zoom.</div>
       <Canvas 
         style={{position: 'absolute', top: '0', height: '100vh', zIndex: '-1' }}
-        camera= {{ position:[0, 0, 5] }}
+        camera= {{ position:[0, 0.5, 3] }}
         onCreated={({ gl }) => {
           gl.shadowMap.enabled = true
           gl.shadowMap.type = THREE.PCFSoftShadowMap
@@ -25,15 +27,16 @@ export default function ReactThreeFiberTest() {
       >
         <Suspense fallback={<Dom center className="loading" children="Loading..." />}>
           <fog attach="fog" args={["white", 10, 20]}/>
-          <spotLight position={[10, 10, 10]} castShadow/>
-          <Box position={[-1.2, 0, 0]} />
-          <Box position={[1.2, 0, 0]} />
+          <pointLight position={[0, 2, 0]} color="white" />
+          <pointLight position={[0, 2, 10]} color="silver" />
+          <pointLight position={[0, 2, -10]} color="white" />
           <Plane />
           <WelcomeLogo />
         </Suspense>
         <OrbitControls />
       </Canvas>
     </div>
+    </>
   )
 }
 

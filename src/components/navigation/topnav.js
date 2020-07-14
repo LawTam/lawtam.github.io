@@ -32,7 +32,7 @@ export default function TopNav(props) {
         </StyledLink>
         
         <StyledLink 
-          to="/projects/" 
+          to="../../pages/Test/three-lawlogo.js" 
           className={topnavStyles.link}>
             PROJECTS
         </StyledLink>
