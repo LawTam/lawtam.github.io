@@ -7,10 +7,11 @@ This design document describes the design of Lawrence's online portfolio that wi
 0. Set up
 1. Top Navigation Bar
 2. Home Page
-3. Experience
-4. About Me
+3. Projects Page
+4. About Me Page
+5. Contact Page
 
-## 0. Set Up
+## Set Up
 ### Style guide: 
 - color: 0xDF3032
 - accent font: federant
@@ -21,7 +22,7 @@ https://developerhandbook.com/webpack/how-to-configure-scss-modules-for-webpack/
 
 
 ## 1. Top Navigation Bar
-* features a logo and navigation links
+__Features a logo and navigation links. The top nav will be included in each page.__
 * logo
     - currently svg
     - considering changing logo to threeJS using React-Three-Fiber
@@ -30,11 +31,13 @@ https://developerhandbook.com/webpack/how-to-configure-scss-modules-for-webpack/
     - created with Gatsby Link API
 
 ## 2. Home Page
-* features threeJS logo using React-Three-Fiber
+* removed threeJS logo using React-Three-Fiber
+    - guide: https://www.youtube.com/watch?v=1rP3nNY2hTo 
     - added plane
     - added shadows
     - blender exported glb
     - added lighting
     - added fog
-https://www.youtube.com/watch?v=1rP3nNY2hTo
+
+
 
