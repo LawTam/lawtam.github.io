@@ -1,4 +1,4 @@
-import React from "react"
+import React, {useState} from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
 
@@ -20,6 +20,8 @@ const StyledLink = styled(props => <Link {...props} />)`
 `;
 
 export default function TopNav(props) {
+  const [isHome, setHome] = useState(true);
+
   return (
     <>
     <div className={topnavStyles.container}>
@@ -27,18 +29,21 @@ export default function TopNav(props) {
       <div idName={topnavStyles.links}>
         <StyledLink 
           to="/about/" 
+          onClick={() => { setHome(false); console.log("about page")}}
           className={topnavStyles.link}>
             ABOUT
         </StyledLink>
         
         <StyledLink 
           to="/projects/" 
+          onClick={() => { setHome(false); console.log("projects page")}}
           className={topnavStyles.link}>
             PROJECTS
         </StyledLink>
         
         <StyledLink 
           to="/contact/" 
+          onClick={() => { setHome(false); console.log("contact page")}}
           className={topnavStyles.link}>
             CONTACT
         </StyledLink>
