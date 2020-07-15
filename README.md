@@ -19,7 +19,7 @@ This design document describes the design of Lawrence's online portfolio that wi
 - text font: open sans
 
 ### Configuring SCSS modules for Webpack
-https://developerhandbook.com/webpack/how-to-configure-scss-modules-for-webpack/
+- download gastby-sass plugin
 
 
 ## 1. Top Navigation Bar
@@ -30,6 +30,8 @@ __Features a logo and navigation links. The top nav will be included in each pag
 * nav links
     - Projects, About, Contact
     - created with Gatsby Link API
+* WIP (dynamic top nav hook)
+    - top nav will change colors according to the screen currently displayed
 
 ## 2. Home Page
 * removed threeJS logo using React-Three-Fiber
@@ -39,6 +41,9 @@ __Features a logo and navigation links. The top nav will be included in each pag
     - blender exported glb
     - added lighting
     - added fog
+* includes TopNav hook
+* includes PersonalIntro hook
+* includes SocialMedia hook
 
 
 
