@@ -1,9 +1,8 @@
 import React, { useRef, useState, Suspense, useEffect } from "react"
-import { Canvas, Dom, useLoader, useFrame, useThree, extend} from "react-three-fiber"
+import { Canvas, Dom} from "react-three-fiber"
 import * as THREE from 'three'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
-import { DRACOLoader } from 'three/examples/jsm/loaders/DRACOLoader'
-import { OrbitControls, draco } from 'drei'
+import { OrbitControls} from 'drei'
 import welcomeStamp from '../../assets/models/welcome.glb'
 
 import Header from "../../components/header"
@@ -39,7 +38,7 @@ export default function ReactThreeFiberTest() {
 
 // https://github.com/react-spring/react-three-fiber/blob/master/examples/src/demos/GltfPlanet.js
 const WelcomeLogo = () => {
-  const [model, setModel] = useState();
+  const [setModel] = useState();
 
   useEffect(() => {
     new GLTFLoader().load(welcomeStamp, setModel);

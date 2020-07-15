@@ -1,9 +1,8 @@
-import React, { useRef, useState, Suspense, useEffect } from "react"
-import { Canvas, Dom, useLoader, useFrame, useThree, extend} from "react-three-fiber"
+import React, { useState, Suspense, useEffect } from "react"
+import { Canvas, Dom} from "react-three-fiber"
 import * as THREE from 'three'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
-import { DRACOLoader } from 'three/examples/jsm/loaders/DRACOLoader'
-import { OrbitControls, draco } from 'drei'
+import { OrbitControls} from 'drei'
 import welcomeStamp from '../../assets/models/welcome.glb'
 
 import Header from "../../components/header"
@@ -42,7 +41,7 @@ export default function ReactThreeFiberTest() {
 
 // https://github.com/react-spring/react-three-fiber/blob/master/examples/src/demos/GltfPlanet.js
 const WelcomeLogo = () => {
-  const [model, setModel] = useState();
+  const [setModel] = useState();
 
   useEffect(() => {
     new GLTFLoader().load(welcomeStamp, setModel);
@@ -58,6 +57,7 @@ const Plane = () => (
   </mesh>
 )
 
+/*
 const Box = props => {
   // This reference will give us direct access to the mesh so we can animate it
   const mesh = useRef()
@@ -87,4 +87,4 @@ const Box = props => {
     </mesh>
   )
 }
-
+*/
