@@ -3,7 +3,7 @@ import styled from "styled-components"
 
 const IntroText = styled.div`
   font-family: 'Federant', cursive;
-  font-size: 64px;
+  font-size: 40px;
   color: #d12a2c;
   word-spacing: 3px;
 `;
@@ -13,11 +13,12 @@ export default function Personal_Intro() {
     <>
       <div id="personal_intro" className="container">
         <IntroText>
-          Hey, I'm Lawrence ~
+          I'm Lawrence, <br></br>
+          a designer and developer <br></br>
+          living in San Francisco. ~
         </IntroText>
         <div>
-          I'm a designer and developer based in San Francisco.
-          Welcome to my portfolio!
+
         </div>
       </div>
 
@@ -29,4 +30,7 @@ export default function Personal_Intro() {
 Hey, I'm Lawrence, <br></br>
           a designer and developer <br></br>
           living in San Francisco.
+
+                    I'm a designer and developer based in San Francisco.
+          Welcome to my portfolio!
           */

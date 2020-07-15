@@ -1,6 +1,13 @@
-import React, { useEffect } from "react"
+import React, { useRef, useState, Suspense, useEffect  } from "react"
 import styled from "styled-components"
 import Parallax from "parallax-js"
+
+// ThreeJS
+import { Canvas, Dom} from "react-three-fiber"
+import * as THREE from 'three'
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
+import { OrbitControls} from 'drei'
+import welcomeStamp from '../assets/models/welcome.glb'
 
 import TopNav from "../components/navigation/TopNav"
 import Introduction from '../components/PersonalIntro'
@@ -53,7 +60,56 @@ export default function Home() {
         </div>
         
         <SocialMedia />
+
       </Page>
     </>
+  )
+}
+
+// https://github.com/react-spring/react-three-fiber/blob/master/examples/src/demos/GltfPlanet.js
+const WelcomeLogo = () => {
+  const [model, setModel] = useState();
+
+  useEffect(() => {
+    new GLTFLoader().load(welcomeStamp, setModel);
+  }, [])
+  //console.log(model);
+  return null;
+}
+
+const Plane = () => (
+  <mesh rotation={[-Math.PI/2, 0, 0]} position={[0, -0.5, 0]} receiveShadow>
+    <planeBufferGeometry attach="geometry" args={[100,100]} />
+    <meshPhysicalMaterial attach="material" color="white" />
+  </mesh>
+)
+
+const Box = props => {
+  // This reference will give us direct access to the mesh so we can animate it
+  const mesh = useRef()
+
+  // Set up state for the hovered and active state
+  const [hovered, setHover] = useState(false)
+  const [active, setActive] = useState(false)
+
+  // Rotate mesh every frame, this is outside of React without overhead
+  //useFrame(() => (mesh.current.rotation.x = mesh.current.rotation.y += 0.01))
+
+  return (
+    <mesh
+      {...props}
+      ref={mesh}
+      scale={active ? [1.5, 1.5, 1.5] : [1, 1, 1]}
+      onClick={e => setActive(!active)}
+      onPointerOver={e => setHover(true)}
+      onPointerOut={e => setHover(false)}
+      castShadow
+    >
+      <boxBufferGeometry attach="geometry" args={[1, 1, 1]} />
+      <meshPhysicalMaterial
+        attach="material"
+        color={hovered ? "hotpink" : "orange"}
+      />
+    </mesh>
   )
 }

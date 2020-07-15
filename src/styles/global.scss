@@ -36,6 +36,11 @@ html {
   position: sticky;
 }
 
+#footer {
+  position: absolute;
+  bottom: 80px;
+}
+
 // https://stackoverflow.com/questions/826782/how-to-disable-text-selection-highlighting
 .noselect {
   -webkit-touch-callout: none; /* iOS Safari */
