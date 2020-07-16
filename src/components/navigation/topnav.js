@@ -26,7 +26,7 @@ export default function TopNav(props) {
     <>
     <div className={topnavStyles.container}>
       <Logo src={lawtam_logo}/>
-      <div idName={topnavStyles.links}>
+      <div id={topnavStyles.links}>
         <StyledLink 
           to="/about/" 
           onClick={() => { setHome(false); console.log("about page")}}

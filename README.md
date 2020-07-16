@@ -43,6 +43,8 @@ __Features a logo and navigation links. The top nav will be included in each pag
     - added fog
 * includes TopNav hook
 * includes PersonalIntro hook
+* includes Lawrence image
+    - (WIP) display only on media query for desktops
 * includes SocialMedia hook
 
 

@@ -1,18 +1,26 @@
-import React, { useRef, useState, Suspense, useEffect  } from "react"
+import React, { ReactDOM, useRef, useState, Suspense, useEffect  } from "react"
 import styled from "styled-components"
 import Parallax from "parallax-js"
+
+// Stylesheets
+import indexStyle from "./index.module.css"
 
 // ThreeJS
 import { Canvas, Dom} from "react-three-fiber"
 import * as THREE from 'three'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 import { OrbitControls} from 'drei'
-import welcomeStamp from '../assets/models/welcome.glb'
 
+// Components
 import TopNav from "../components/navigation/TopNav"
 import Introduction from '../components/PersonalIntro'
 import SocialMedia from "../components/navigation/SocialMedia"
 import law_blkwht from "../assets/2D/lawrence_fullbody_blkwht.png"
+
+// Assets
+import welcomeStamp from '../assets/models/welcome.glb'
+import lineAccent from '../assets/2D/line_accent.svg'
+import lineAccentThin from '../assets/2D/line_accent_thin.svg'
 
 const Page = styled.div`
   color: black;
@@ -25,13 +33,25 @@ const Page = styled.div`
 
 const Lawrence = styled.img`
   position: absolute;
-  bottom: 0px;
-  right: 0px;
+  bottom: -30vh;
+  right: -12vh;
   margin: 0;
   height: 100vh;
-  transform: rotate(5deg);
+  transform: rotate(1deg);
   width: auto;
-  z-index: -5;
+  z-index: 2;
+`;
+
+const LineAccent = styled.img`
+  position: absolute;
+  top: -10vh;
+  height: 150vh;
+  width: auto;
+  z-index: 1;
+
+  .right-line-accent{
+    left: 100%;
+  }
 `;
 
 export default function Home() {
@@ -50,12 +70,22 @@ export default function Home() {
       <Page id="Home" className="noselect">
         <TopNav />
         
-        <div id="parallax_scene">
-          <div data-depth="0.1">
-          <Introduction />
+        <div id="parallax_scene" style={{position:'absolute', top:'0', width: '100%'}}>
+          
+          <div data-depth="0.1" className="fullscreen">
+            <LineAccent style={{right: '12vh', transform:'rotate(5deg)'}} src={lineAccent}/>
           </div>
+
           <div data-depth="0.2" className="fullscreen">
+            <LineAccent style={{left: '12vh', transform:'rotate(-40deg)'}} src={lineAccent}/>
+          </div>
+          
+          <div data-depth="0.03" className="fullscreen">
             <Lawrence src={law_blkwht}/>
+          </div>
+
+          <div data-depth="0.01" className="fullscreen">
+            <Introduction/>
           </div>
         </div>
         

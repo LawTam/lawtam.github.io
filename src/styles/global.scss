@@ -41,6 +41,11 @@ html {
   bottom: 80px;
 }
 
+#parallax_scene{
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+
 // https://stackoverflow.com/questions/826782/how-to-disable-text-selection-highlighting
 .noselect {
   -webkit-touch-callout: none; /* iOS Safari */
