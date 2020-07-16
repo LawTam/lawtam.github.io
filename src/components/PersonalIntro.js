@@ -19,6 +19,10 @@ export default function Personal_Intro() {
           living in San Francisco.
         </IntroText>
         <div>
+          <br></br>
+          Note: This website is still under construction!
+        </div>
+        <div>
 
         </div>
       </div>

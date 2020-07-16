@@ -13,13 +13,15 @@ This design document describes the design of Lawrence's online portfolio that wi
 
 ## Set Up
 ### Style guide: 
-- accent color: #d12a2c
+- accent color: #d12a2c, #DF4A47
 - text color: #000000
 - accent font: federant
 - text font: open sans
 
-### Configuring SCSS modules for Webpack
-- download gastby-sass plugin
+### Gatsby/React plugins
+- gatsby-sass
+- Suspense
+
 
 
 ## 1. Top Navigation Bar
@@ -44,7 +46,9 @@ __Features a logo and navigation links. The top nav will be included in each pag
 * includes TopNav hook
 * includes PersonalIntro hook
 * includes Lawrence image
-    - (WIP) display only on media query for desktops
+    - display only on media query for <= laptops (1440px)
+* includes Line Accents
+    - display only on media query for <= laptops (1440px)
 * includes SocialMedia hook
 
 

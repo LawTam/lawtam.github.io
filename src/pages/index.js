@@ -4,6 +4,7 @@ import Parallax from "parallax-js"
 
 // Stylesheets
 import indexStyle from "./index.module.css"
+import {device} from "../components/misc/Device"
 
 // ThreeJS
 import { Canvas, Dom} from "react-three-fiber"
@@ -32,25 +33,31 @@ const Page = styled.div`
 `;
 
 const Lawrence = styled.img`
-  position: absolute;
-  bottom: -30vh;
-  right: -12vh;
-  margin: 0;
-  height: 100vh;
-  transform: rotate(1deg);
-  width: auto;
-  z-index: 2;
+  display: none;
+
+  @media ${device.laptopL} {
+    display: initial;
+    position: absolute;
+    bottom: -30vh;
+    right: -12vh;
+    margin: 0;
+    height: 100vh;
+    transform: rotate(1deg);
+    width: auto;
+    z-index: 2;
+  }
 `;
 
 const LineAccent = styled.img`
-  position: absolute;
-  top: -10vh;
-  height: 150vh;
-  width: auto;
-  z-index: 1;
+  display: none;
 
-  .right-line-accent{
-    left: 100%;
+  @media ${device.laptopL} {
+    display: initial;
+    position: absolute;
+    top: -10vh;
+    height: 150vh;
+    width: auto;
+    z-index: 1;
   }
 `;
 
@@ -76,7 +83,7 @@ export default function Home() {
             <LineAccent style={{right: '12vh', transform:'rotate(5deg)'}} src={lineAccent}/>
           </div>
 
-          <div data-depth="0.2" className="fullscreen">
+          <div data-depth="0.15" className="fullscreen">
             <LineAccent style={{left: '12vh', transform:'rotate(-40deg)'}} src={lineAccent}/>
           </div>
           
