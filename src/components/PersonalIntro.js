@@ -20,7 +20,7 @@ export default function Personal_Intro() {
         </IntroText>
         <div>
           <br></br>
-          Note: This website is still under construction!
+          Note: This website is still under construction
         </div>
         <div>
 

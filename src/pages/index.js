@@ -1,6 +1,7 @@
-import React, { ReactDOM, useRef, useState, Suspense, useEffect  } from "react"
+import React, { ReactDOM, useRef, useState, Suspense, useEffect, } from "react"
 import styled from "styled-components"
 import Parallax from "parallax-js"
+import Helmet from 'react-helmet'
 
 // Stylesheets
 import indexStyle from "./index.module.css"
@@ -16,10 +17,10 @@ import { OrbitControls} from 'drei'
 import TopNav from "../components/navigation/TopNav"
 import Introduction from '../components/PersonalIntro'
 import SocialMedia from "../components/navigation/SocialMedia"
-import law_blkwht from "../assets/2D/lawrence_fullbody_blkwht.png"
 
 // Assets
 import welcomeStamp from '../assets/models/welcome.glb'
+import law_blkwht from "../assets/2D/lawrence_blkwht.webp"
 import lineAccent from '../assets/2D/line_accent.svg'
 import lineAccentThin from '../assets/2D/line_accent_thin.svg'
 
@@ -74,21 +75,27 @@ export default function Home() {
 
   return (
     <>
+      <Helmet defer={false}>
+          <meta charSet="utf-8" />
+          <title> Lawrence Tam | Home </title>
+          <link rel="canonical" href="http://lawtam.github.io" />
+      </Helmet>
+
       <Page id="Home" className="noselect">
         <TopNav />
         
         <div id="parallax_scene" style={{position:'absolute', top:'0', width: '100%'}}>
           
           <div data-depth="0.1" className="fullscreen">
-            <LineAccent style={{right: '12vh', transform:'rotate(5deg)'}} src={lineAccent}/>
+            <LineAccent alt="lineaccent" style={{right: '12vh', transform:'rotate(5deg)'}} src={lineAccent}/>
           </div>
 
-          <div data-depth="0.15" className="fullscreen">
-            <LineAccent style={{left: '12vh', transform:'rotate(-40deg)'}} src={lineAccent}/>
+          <div data-depth="0.1" className="fullscreen">
+            <LineAccent alt="lineaccent" style={{left: '12vh', transform:'rotate(-40deg)'}} src={lineAccent}/>
           </div>
           
           <div data-depth="0.03" className="fullscreen">
-            <Lawrence src={law_blkwht}/>
+            <Lawrence alt="image of the author" src={law_blkwht}/>
           </div>
 
           <div data-depth="0.01" className="fullscreen">

@@ -21,7 +21,14 @@ This design document describes the design of Lawrence's online portfolio that wi
 ### Gatsby/React plugins
 - gatsby-sass
 - Suspense
+- gatsby-plugin-manifest (configures Gatsby to create a manifest.webmanifest file on every site build that satify PWA)
+- gastby-plugin-offline
 
+TODO: 
+
+- React Helmet and gatsby-plugin-react-helmet
+    - https://www.gatsbyjs.org/tutorial/part-eight/ 
+- https://www.gatsbyjs.org/docs/using-gatsby-image/
 
 
 ## 1. Top Navigation Bar
