@@ -10,6 +10,7 @@ const Logo = styled.img`
   margin-left: auto;
   margin-right: auto;
   width: 60px;
+  padding-bottom: 20px;
 `;
 
 const StyledLink = styled(props => <Link {...props} />)`
@@ -28,21 +29,21 @@ export default function TopNav(props) {
       <Logo src={lawtam_logo}/>
       <div id={topnavStyles.links}>
         <StyledLink 
-          to="/about/" 
+          to="/" 
           onClick={() => { setHome(false); console.log("about page")}}
           className={topnavStyles.link}>
             ABOUT
         </StyledLink>
         
         <StyledLink 
-          to="/projects/" 
+          to="/" 
           onClick={() => { setHome(false); console.log("projects page")}}
           className={topnavStyles.link}>
             PROJECTS
         </StyledLink>
         
         <StyledLink 
-          to="/contact/" 
+          to="/" 
           onClick={() => { setHome(false); console.log("contact page")}}
           className={topnavStyles.link}>
             CONTACT

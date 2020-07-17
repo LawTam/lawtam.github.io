@@ -6,7 +6,7 @@ const IntroText = styled.div`
   font-size: 40px;
   color: #DF4A47;
   word-spacing: 3px;
-  margin-top: 250px;
+  //margin-top: 250px;
 `;
 
 export default function Personal_Intro() {
@@ -19,8 +19,8 @@ export default function Personal_Intro() {
           living in San Francisco.
         </IntroText>
         <div>
-          <br></br>
-          Note: This website is still under construction
+          <br></br><br></br>
+          Note: This website is still under construction. ABOUT, PROJECTS, and CONTACT are coming soon!
         </div>
         <div>
 

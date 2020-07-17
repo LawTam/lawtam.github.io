@@ -1,4 +1,4 @@
-import React, { ReactDOM, useRef, useState, Suspense, useEffect, } from "react"
+import React, { useRef, useState, Suspense, useEffect, } from "react"
 import styled from "styled-components"
 import Parallax from "parallax-js"
 import Helmet from 'react-helmet'
@@ -26,11 +26,11 @@ import lineAccentThin from '../assets/2D/line_accent_thin.svg'
 
 const Page = styled.div`
   color: black;
-  font-family: "Open Sans";
   font-size: 16px;
   height: 100vh;
   overflow-y: hidden;
   overflow-x: hidden;
+  font-family: "Open Sans";
 `;
 
 const Lawrence = styled.img`
@@ -82,24 +82,29 @@ export default function Home() {
       </Helmet>
 
       <Page id="Home" className="noselect">
-        <TopNav />
-        
-        <div id="parallax_scene" style={{position:'absolute', top:'0', width: '100%'}}>
-          
-          <div data-depth="0.1" className="fullscreen">
-            <LineAccent alt="lineaccent" style={{right: '12vh', transform:'rotate(5deg)'}} src={lineAccent}/>
-          </div>
+        <Suspense>
+          <TopNav />
+          <Introduction/>
+        </Suspense>
 
-          <div data-depth="0.1" className="fullscreen">
-            <LineAccent alt="lineaccent" style={{left: '12vh', transform:'rotate(-40deg)'}} src={lineAccent}/>
-          </div>
+        <div id="parallax_scene" style={{position:'absolute', top:'0', width: '100%'}}>
+          <Suspense>
+            <div data-depth="0.05" className="fullscreen">
+              <LineAccent alt="lineaccent" style={{right: '12vh', transform:'rotate(5deg)'}} src={lineAccent}/>
+            </div>
+
+            <div data-depth="0.05" className="fullscreen">
+              <LineAccent alt="lineaccent" style={{left: '12vh', transform:'rotate(-40deg)'}} src={lineAccent}/>
+            </div>
+          </Suspense>
+
           
-          <div data-depth="0.03" className="fullscreen">
+          <div data-depth="0.1" className="fullscreen">
             <Lawrence alt="image of the author" src={law_blkwht}/>
           </div>
 
-          <div data-depth="0.01" className="fullscreen">
-            <Introduction/>
+          <div data-depth="0.05" className="fullscreen">
+            
           </div>
         </div>
         
