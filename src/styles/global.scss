@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Federant&display=swap');
+@import "./_colors.scss";
+
 
 /* PROJECT CSS */
 body{
@@ -11,31 +11,70 @@ html {
   overflow-x : hidden;
   overflow-y: hidden;
   font-family: "Open Sans";
+  font-weight: none;
+  font-display: auto;
 }
+h1{
+  font-family: 'Federant', cursive;
+  font-size: 3.8rem;
+  font-weight: lighter;
+  font-display: block;
+  color: $primary-color;
+  word-spacing: 3px;
+  margin: 0;
+}
+h2{
+  font-family: 'Numans';
+  font-weight: 300;
+  font-size: 14px;
+  color: $accent-color;
+}
+h3{
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-family: 'Open Sans';
+  font-weight: 800;
+  font-size: 16px;
+  color: $default;
+}
+p{
+  font-family: 'Numans';
+  font-size: 12px;
+}
+ 
 
 /* GLOBAL OBJECT CSS */
 .container {
   padding-top: 100px;
   padding-bottom: 100px;
   width: 100%;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .fullscreen {
   width: 100vw;
   height: 100vh;
 }
-.absolute {
-  position: absolute;
-  top: 0;
+.flex-row-container{
+  position: relative;
+  display: flex;
+  flex-direction: row;
 }
-.static {
-  position: static;
+.media {
+  position: relative;
+  display: flex;
+  align-content: center;
+  justify-content: center;
 }
-.sticky {
-  position: sticky;
-}
-.fixed {
-  position: sticky;
+.body{
+  position: relative;
+  top: -30px;
+  padding-left: 80px;
+  padding-right: 40px;
+  display: flex;
+  flex-direction: column;
 }
 
 #footer {
@@ -46,6 +85,15 @@ html {
 #parallax_scene{
   overflow-y: hidden;
   overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: start;
+}
+#social_media{
+  position: absolute;
+  bottom: -50px;
+  left: 40px;
 }
 
 // https://stackoverflow.com/questions/826782/how-to-disable-text-selection-highlighting

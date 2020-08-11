@@ -1,17 +1,20 @@
-# Design Document
-
-## Introduction
-This design document describes the design of Lawrence's online portfolio that will be built using React and Gatsby. 
+# Design Document 
 
 ## Table of Contents
-0. Set up
-1. Top Navigation Bar
-2. Home Page
-3. Projects Page
-4. About Me Page
-5. Contact Page
+- Set up
+- Top Navigation Bar
+- Home Page
+- Projects Page
+- About Me Page
+- Contact Page
+- Tricks I learned
 
 ## Set Up
+### Technologies Used
+- React/Node
+- Gatsby, a React extension
+- tons of Gatsby/React plugins. I explain a couple eseential ones later.
+
 ### Style guide: 
 - accent color: #d12a2c, #DF4A47
 - text color: #000000
@@ -20,18 +23,19 @@ This design document describes the design of Lawrence's online portfolio that wi
 
 ### Gatsby/React plugins
 - gatsby-sass
-- Suspense
+- Suspense (!! DOESNT WORK FOR GATSBY YET, alternative: react-loadable)
+    - alternative: @uploadcare/client-suspense (also does not work)
+    - https://github.com/uploadcare/client-suspense 
 - gatsby-plugin-manifest (configures Gatsby to create a manifest.webmanifest file on every site build that satify PWA)
 - gastby-plugin-offline
-
-TODO: 
-
 - React Helmet and gatsby-plugin-react-helmet
     - https://www.gatsbyjs.org/tutorial/part-eight/ 
 - https://www.gatsbyjs.org/docs/using-gatsby-image/
+- gatsby-plugin-netlify vs gatsby-plugin-s3
+- gatsby preconnect
 
 
-## 1. Top Navigation Bar
+## Top Navigation Bar
 __Features a logo and navigation links. The top nav will be included in each page.__
 * logo
     - currently svg
@@ -42,7 +46,7 @@ __Features a logo and navigation links. The top nav will be included in each pag
 * WIP (dynamic top nav hook)
     - top nav will change colors according to the screen currently displayed
 
-## 2. Home Page
+## Home Page
 * removed threeJS logo using React-Three-Fiber
     - guide: https://www.youtube.com/watch?v=1rP3nNY2hTo 
     - added plane
@@ -60,3 +64,8 @@ __Features a logo and navigation links. The top nav will be included in each pag
 
 
 
+## Tricks I Learned
+### Styling
+* use `font-display` to make sure font styling are rendered while the rest of the project is loading.
+
+### 

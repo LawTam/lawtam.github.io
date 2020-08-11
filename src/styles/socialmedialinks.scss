@@ -1,20 +1,21 @@
 // https://codepen.io/sazzad/pen/WbdzzQ/
+@import "./_colors.scss";
 
 @import url("//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css");
 
 .footer-social-links{
-  font-size: 20px;
+  font-size: 15px;
   text-align: center;
 }
 .footer-social-links a{
-    width: 30px;
-    height: 30px;
+    width: 20px;
+    height: 20px;
     line-height: 30px !important;
     position: relative;
-    margin: 0 15px;
+    margin: 10px 15px;
     text-align: center;
     display: inline-block;
-    color: black;
+    color: $accent-color;
     
     -webkit-transition: all 0.27s cubic-bezier(0.300, 0.100, 0.580, 1.000);  
     -moz-transition: all 0.27s cubic-bezier(0.300, 0.100, 0.580, 1.000); 
@@ -25,7 +26,7 @@
 .footer-social-links a i,
 .footer-social-links a span{
     position: relative;
-    top: 1px; //position in box
+    top: -4px; //position in box
     left: 1px; 
 }
 .footer-social-links a:before{
@@ -36,7 +37,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    border: 1px solid #111;
+    border: 1px solid $accent-color;
     
     -webkit-border-radius: 2px;
     -moz-border-radius: 2px;

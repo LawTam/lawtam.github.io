@@ -4,55 +4,56 @@ import Parallax from "parallax-js"
 import Helmet from 'react-helmet'
 
 // Stylesheets
-import indexStyle from "./index.module.css"
 import {device} from "../components/misc/Device"
-
-// ThreeJS
-import { Canvas, Dom} from "react-three-fiber"
-import * as THREE from 'three'
-import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
-import { OrbitControls} from 'drei'
 
 // Components
 import TopNav from "../components/navigation/TopNav"
+import SideNav from "../components/navigation/SideNav"
 import Introduction from '../components/PersonalIntro'
-import SocialMedia from "../components/navigation/SocialMedia"
+
 
 // Assets
 import welcomeStamp from '../assets/models/welcome.glb'
-import law_blkwht from "../assets/2D/lawrence_blkwht.webp"
+import law_blkwht from "../assets/2D/law_blur.webp"
 import lineAccent from '../assets/2D/line_accent.svg'
 import lineAccentThin from '../assets/2D/line_accent_thin.svg'
 
 const Page = styled.div`
   color: black;
-  font-size: 16px;
-  height: 100vh;
+  font-size: 18px;
+  height: 900px;
   overflow-y: hidden;
   overflow-x: hidden;
-  font-family: "Open Sans";
+
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: start;
+`;
+
+const LawrenceWrapper = styled.div`
+  position: absolute;
+  right: -100px;
+  bottom: -200px;
 `;
 
 const Lawrence = styled.img`
   display: none;
 
-  @media ${device.laptopL} {
-    display: initial;
-    position: absolute;
-    bottom: -30vh;
-    right: -12vh;
+  @media ${device.laptop} {
+    display: block;
     margin: 0;
     height: 100vh;
     transform: rotate(1deg);
     width: auto;
-    z-index: 2;
+    z-index: -2;
   }
 `;
 
 const LineAccent = styled.img`
   display: none;
 
-  @media ${device.laptopL} {
+  @media ${device.laptop} {
     display: initial;
     position: absolute;
     top: -10vh;
@@ -68,97 +69,49 @@ export default function Home() {
     var parallaxInstance = new Parallax(scene, {
       relativeInput: true,
       clipRelativeInput: true,
-      // invertX: false,
-      // invertY: false,
+      invertX: false,
+      invertY: false,
     });
   });
 
   return (
     <>
       <Helmet defer={false}>
-          <meta charSet="utf-8" />
+          <meta charSet="utf-8" 
+              name="description" 
+              content="Lawrence is a designer and developer from San Francisco.
+                        This portfolio showcases his previous experiences with
+                        design and development, as well as a couple cool web tricks
+                        he picked up along the way like threeJS and parallax."/>
           <title> Lawrence Tam | Home </title>
           <link rel="canonical" href="http://lawtam.github.io" />
       </Helmet>
 
       <Page id="Home" className="noselect">
-        <Suspense>
-          <TopNav />
+          <SideNav />
           <Introduction/>
-        </Suspense>
 
-        <div id="parallax_scene" style={{position:'absolute', top:'0', width: '100%'}}>
-          <Suspense>
-            <div data-depth="0.05" className="fullscreen">
-              <LineAccent alt="lineaccent" style={{right: '12vh', transform:'rotate(5deg)'}} src={lineAccent}/>
-            </div>
+        <div id="parallax_scene" style={{position:'absolute', width: '100%'}}>
+          <div data-depth="0.02" className="fullscreen">
+            <LineAccent alt="lineaccent1" style={{right: '30vh', top: '-30vh', transform:'rotate(30deg)'}} src={lineAccent}/>
+          </div>
 
-            <div data-depth="0.05" className="fullscreen">
-              <LineAccent alt="lineaccent" style={{left: '12vh', transform:'rotate(-40deg)'}} src={lineAccent}/>
-            </div>
-          </Suspense>
-
+          <div data-depth="0.02" className="fullscreen">
+            <LineAccent alt="lineaccent2" style={{height:'100vh',left:'10vw', top: '35vh', transform:'rotate(-60deg)'}} src={lineAccent}/>
+          </div>
           
-          <div data-depth="0.1" className="fullscreen">
-            <Lawrence alt="image of the author" src={law_blkwht}/>
+          <div data-depth="0.05" className="fullscreen">
+            <LawrenceWrapper>
+              <Lawrence alt="image of the author" src={law_blkwht}/>
+            </LawrenceWrapper>
+            
           </div>
 
           <div data-depth="0.05" className="fullscreen">
             
           </div>
         </div>
-        
-        <SocialMedia />
-
       </Page>
     </>
-  )
-}
-
-// https://github.com/react-spring/react-three-fiber/blob/master/examples/src/demos/GltfPlanet.js
-const WelcomeLogo = () => {
-  const [model, setModel] = useState();
-
-  useEffect(() => {
-    new GLTFLoader().load(welcomeStamp, setModel);
-  }, [])
-  //console.log(model);
-  return null;
-}
-
-const Plane = () => (
-  <mesh rotation={[-Math.PI/2, 0, 0]} position={[0, -0.5, 0]} receiveShadow>
-    <planeBufferGeometry attach="geometry" args={[100,100]} />
-    <meshPhysicalMaterial attach="material" color="white" />
-  </mesh>
-)
-
-const Box = props => {
-  // This reference will give us direct access to the mesh so we can animate it
-  const mesh = useRef()
-
-  // Set up state for the hovered and active state
-  const [hovered, setHover] = useState(false)
-  const [active, setActive] = useState(false)
-
-  // Rotate mesh every frame, this is outside of React without overhead
-  //useFrame(() => (mesh.current.rotation.x = mesh.current.rotation.y += 0.01))
-
-  return (
-    <mesh
-      {...props}
-      ref={mesh}
-      scale={active ? [1.5, 1.5, 1.5] : [1, 1, 1]}
-      onClick={e => setActive(!active)}
-      onPointerOver={e => setHover(true)}
-      onPointerOut={e => setHover(false)}
-      castShadow
-    >
-      <boxBufferGeometry attach="geometry" args={[1, 1, 1]} />
-      <meshPhysicalMaterial
-        attach="material"
-        color={hovered ? "hotpink" : "orange"}
-      />
-    </mesh>
   )
 }
