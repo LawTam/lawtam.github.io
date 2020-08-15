@@ -1,4 +1,4 @@
-import React, { useRef, useState, Suspense, useEffect, } from "react"
+import React, { Link, useRef, useState, Suspense, useEffect, } from "react"
 import styled from "styled-components"
 import Parallax from "parallax-js"
 import Helmet from 'react-helmet'
@@ -10,25 +10,32 @@ import {device} from "../components/misc/Device"
 import TopNav from "../components/navigation/TopNav"
 import SideNav from "../components/navigation/SideNav"
 import Introduction from '../components/PersonalIntro'
-
+import Projects from '../components/Projects'
 
 // Assets
 import welcomeStamp from '../assets/models/welcome.glb'
 import law_blkwht from "../assets/2D/law_blur.webp"
 import lineAccent from '../assets/2D/line_accent.svg'
 import lineAccentThin from '../assets/2D/line_accent_thin.svg'
+import Project from "./projects"
 
 const Page = styled.div`
   color: black;
   font-size: 18px;
-  height: 900px;
-  overflow-y: hidden;
+  height: 1000px;
+  //overflow-y: hidden;
   overflow-x: hidden;
 
   display: flex;
   flex-direction: column;
   align-content: center;
   justify-content: start;
+`;
+
+const PageBreak = styled.div`
+  background-color: #3f3f3f;
+  width: 100vw;
+  height: 20px;
 `;
 
 const LawrenceWrapper = styled.div`
@@ -96,21 +103,21 @@ export default function Home() {
             <LineAccent alt="lineaccent1" style={{right: '30vh', top: '-30vh', transform:'rotate(30deg)'}} src={lineAccent}/>
           </div>
 
-          <div data-depth="0.02" className="fullscreen">
+        {/*
+          <div data-depth="0.04" className="fullscreen">
             <LineAccent alt="lineaccent2" style={{height:'100vh',left:'10vw', top: '35vh', transform:'rotate(-60deg)'}} src={lineAccent}/>
           </div>
-          
+        */}
           <div data-depth="0.05" className="fullscreen">
             <LawrenceWrapper>
               <Lawrence alt="image of the author" src={law_blkwht}/>
-            </LawrenceWrapper>
-            
-          </div>
-
-          <div data-depth="0.05" className="fullscreen">
-            
+            </LawrenceWrapper>          
           </div>
         </div>
+      </Page>
+
+      <Page>
+        <Projects/>
       </Page>
     </>
   )

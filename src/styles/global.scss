@@ -9,7 +9,7 @@ html {
   background-color: white;
   text-decoration: none;
   overflow-x : hidden;
-  overflow-y: hidden;
+  //overflow-y: hidden;
   font-family: "Open Sans";
   font-weight: none;
   font-display: auto;
@@ -37,9 +37,34 @@ h3{
   font-size: 16px;
   color: $default;
 }
+h4 {
+  margin: 0;
+}
 p{
   font-family: 'Numans';
   font-size: 12px;
+}
+button {
+  margin-left: 80px;
+  width: 180px;
+  border: 2px solid $primary-color;
+  padding: 10px;
+  color: $primary-color;
+  background-color: white;
+  border-radius: 3px;
+
+  &:hover{
+    background-color: $primary-color;
+    color: white;
+    cursor: pointer; 
+  }
+
+  &:active{
+    border: 2px solid $primary-color;
+    color: $primary-color;
+  }
+
+  &:focus { outline: thin dotted; }
 }
  
 
@@ -62,12 +87,7 @@ p{
   display: flex;
   flex-direction: row;
 }
-.media {
-  position: relative;
-  display: flex;
-  align-content: center;
-  justify-content: center;
-}
+
 .body{
   position: relative;
   top: -30px;
@@ -75,6 +95,25 @@ p{
   padding-right: 40px;
   display: flex;
   flex-direction: column;
+}
+
+// Media
+.media {
+  position: relative;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+.img-container {
+  img{
+    display: block;
+    max-width: 100px;
+    max-height: 100px;
+    margin-right: 50px;
+  }
+}
+.project-description {
+  //
 }
 
 #footer {

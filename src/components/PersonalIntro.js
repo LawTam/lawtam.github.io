@@ -38,15 +38,13 @@ export default function Personal_Intro() {
           
           <div className="body">
             <h2>- INTRODUCTION</h2>
-            <h3> Hey! I design and develop memorable user experiences.</h3>
-            <p> I enjoy working with people to design solutions and actually bring them to life! I have
-              experience across design and front-end dev from user interviews, to product design,
-              to software development.
+            <h3> Hi, I'm Lawrence! I design and develop memorable user experiences.</h3>
+            <p> I'm a Computer Science B.S. c/o 2020 from UC Santa Cruz, where I switched out of game design to focus
+              on computer graphics and UI/UX design.
               <br></br><br></br>
-              Welcome to my website! Click the button below to learn more about what I do.
+              Welcome to my website! Here you'll find my past projects and get to learn a little bit about me and how I do things.
             </p>
           </div>
-
         </Intro>
       </div>
     </>
