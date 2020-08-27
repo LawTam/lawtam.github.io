@@ -121,11 +121,6 @@ button {
 }
 
 #parallax_scene{
-  padding-top: 500px;
-  padding-left: 50px;
-  @media only screen and (min-width: 1260px) {
-    padding-top: 0;
-  }
   overflow-y: hidden;
   overflow-x: hidden;
   display: flex;

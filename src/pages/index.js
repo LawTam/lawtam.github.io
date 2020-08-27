@@ -46,6 +46,7 @@ const LawrenceWrapper = styled.div`
 
 const Lawrence = styled.img`
   height: 60vh;
+  z-index: -2;
 
   @media ${device.mobileL}{
     height: 70vh;
@@ -61,7 +62,7 @@ const Lawrence = styled.img`
     height: 100vh;
     transform: rotate(1deg);
     width: auto;
-    z-index: -2;
+    
   }
 `;
 
@@ -70,12 +71,12 @@ const LineAccent = styled.img`
   position: absolute;
   height: 100vh;
   right: 30vw;
-  top: -30vh;
+  top: -100vh;
   transform:rotate(45deg);
 
   @media ${device.mobileL}{
     right: 30vw;
-    top: -30vh;
+    top: -110vh;
     height: 110vh;
   }
 
@@ -84,12 +85,12 @@ const LineAccent = styled.img`
   }
 
   @media ${device.laptop} {
-    height: 140vh;
+    height: 150vh;
     width: auto;
     z-index: 1;
     right: 20vw;
-    top: -10vw;
-    transform:rotate(35deg);
+    top: -150vh;
+    transform:rotate(40deg);
   }
 `;
 
@@ -123,7 +124,10 @@ export default function Home() {
 
         <div id="parallax_scene" style={{position:'absolute', width: '100%'}}>
           <div data-depth="0.02" className="fullscreen">
-            <LineAccent alt="lineaccent1" src={lineAccent}/>
+            <LawrenceWrapper>
+              <LineAccent alt="lineaccent1" src={lineAccent}/>
+            </LawrenceWrapper>
+            
           </div>
 
         {/*
