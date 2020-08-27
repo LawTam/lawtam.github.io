@@ -22,8 +22,8 @@ import Project from "./projects"
 const Page = styled.div`
   color: black;
   font-size: 18px;
-  height: 1000px;
-  //overflow-y: hidden;
+  height: 100vh;
+  overflow-y: hidden;
   overflow-x: hidden;
 
   display: flex;
@@ -45,7 +45,15 @@ const LawrenceWrapper = styled.div`
 `;
 
 const Lawrence = styled.img`
-  display: none;
+  height: 60vh;
+
+  @media ${device.mobileL}{
+    height: 70vh;
+  }
+
+  @media ${device.tablet}{
+    height: 80vh;
+  }
 
   @media ${device.laptop} {
     display: block;
@@ -58,15 +66,30 @@ const Lawrence = styled.img`
 `;
 
 const LineAccent = styled.img`
-  display: none;
+  display: initial;
+  position: absolute;
+  height: 100vh;
+  right: 30vw;
+  top: -30vh;
+  transform:rotate(45deg);
+
+  @media ${device.mobileL}{
+    right: 30vw;
+    top: -30vh;
+    height: 110vh;
+  }
+
+  @media ${device.tablet}{
+    height: 120vh;
+  }
 
   @media ${device.laptop} {
-    display: initial;
-    position: absolute;
-    top: -10vh;
-    height: 150vh;
+    height: 140vh;
     width: auto;
     z-index: 1;
+    right: 20vw;
+    top: -10vw;
+    transform:rotate(35deg);
   }
 `;
 
@@ -100,7 +123,7 @@ export default function Home() {
 
         <div id="parallax_scene" style={{position:'absolute', width: '100%'}}>
           <div data-depth="0.02" className="fullscreen">
-            <LineAccent alt="lineaccent1" style={{right: '30vh', top: '-30vh', transform:'rotate(30deg)'}} src={lineAccent}/>
+            <LineAccent alt="lineaccent1" src={lineAccent}/>
           </div>
 
         {/*

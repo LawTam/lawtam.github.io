@@ -1,18 +1,22 @@
 import React from "react"
 import styled from "styled-components"
+// Stylesheets
+import {device} from "../components/misc/Device"
 
 import logo from "../assets/2D/lawtam_logo.svg"
 import diamond from "../assets/2D/diamond.svg"
 
 const Intro = styled.div`
   position: relative;
-  width: 550px;
-  padding-right: 20vw;
-  padding-top: 100px;
+  padding-top: 8vw;
+
+  @media ${device.laptop}{
+    padding-right: 20vw;
+  }
 `;
 
 const Logo = styled.img`
-  height: 60px;
+  height: calc(1rem + 4vmin);
   padding-right: 20px;
 `;
 
@@ -31,20 +35,8 @@ export default function Personal_Intro() {
             <Logo src={logo} alt="author's logo"></Logo>
             <h1>Lawrence Tam.</h1>
           </div>
-
-          <div className="media">
-            <Diamond src={diamond} alt="diamond"></Diamond> 
-          </div>
           
-          <div className="body">
-            <h2>- INTRODUCTION</h2>
-            <h3> Hi, I'm Lawrence! I design and develop memorable user experiences.</h3>
-            <p> I'm a Computer Science B.S. c/o 2020 from UC Santa Cruz, where I switched out of game design to focus
-              on computer graphics and UI/UX design.
-              <br></br><br></br>
-              Welcome to my website! Here you'll find my past projects and get to learn a little bit about me and how I do things.
-            </p>
-          </div>
+
         </Intro>
       </div>
     </>
@@ -52,6 +44,17 @@ export default function Personal_Intro() {
 }
 
 /*
+          <div className="body">
+            <h2>- INTRODUCTION</h2>
+            <h3> Hi, I'm Lawrence! I design and develop awesome web apps.</h3>
+            <p> I love the web! I'm into product design, UI/UX design, 
+              and front-end development. For me it's hard to pick one, so I do them all!
+              <br></br><br></br>
+              Welcome to my website! Here you'll find my past projects and get to learn about me and how I do things.
+            </p>
+          </div>
+
+          
 Hey, I'm Lawrence, <br></br>
           a designer and developer <br></br>
           living in San Francisco.

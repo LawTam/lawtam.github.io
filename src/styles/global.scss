@@ -1,6 +1,5 @@
 @import "./_colors.scss";
 
-
 /* PROJECT CSS */
 body{
   color: black;
@@ -16,7 +15,7 @@ html {
 }
 h1{
   font-family: 'Federant', cursive;
-  font-size: 3.8rem;
+  font-size: calc(1rem + 4vmin);
   font-weight: lighter;
   font-display: block;
   color: $primary-color;
@@ -26,12 +25,12 @@ h1{
 h2{
   font-family: 'Numans';
   font-weight: 300;
-  font-size: 14px;
+  font-size: calc(0.3rem + 1vmin);
   color: $accent-color;
 }
 h3{
   margin-top: 20px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   font-family: 'Open Sans';
   font-weight: 800;
   font-size: 16px;
@@ -90,9 +89,9 @@ button {
 
 .body{
   position: relative;
-  top: -30px;
-  padding-left: 80px;
-  padding-right: 40px;
+  top: 30px;
+  padding-left: 5px;
+  padding-right: 90px;
   display: flex;
   flex-direction: column;
 }
@@ -122,6 +121,11 @@ button {
 }
 
 #parallax_scene{
+  padding-top: 500px;
+  padding-left: 50px;
+  @media only screen and (min-width: 1260px) {
+    padding-top: 0;
+  }
   overflow-y: hidden;
   overflow-x: hidden;
   display: flex;

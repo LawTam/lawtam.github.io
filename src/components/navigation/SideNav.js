@@ -1,21 +1,30 @@
 import React, {useState} from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
+
+// Stylesheets
+import {device} from "../../components/misc/Device"
 import "../../styles/components/_sidenav.scss"
 
 import SocialMedia from "../../components/navigation/SocialMedia"
 
 const SideNav = styled.div`
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  top: 50%;
-  transform: translateY(-50%);
-  padding-left: 20px;
-  z-index: 2;
+  //display: none;
+
+    position: absolute;
+    //display: flex;
+    display: none;
+    flex-direction: column;
+    top: 50%;
+    transform: translateY(-50%);
+    padding-left: 20px;
+    z-index: 2;
 `;
 
 const StyledLink = styled(props => <Link {...props} />)`
+  display: none;
+
+  
   font-family: Numans; 
   margin-bottom: 20px;
   padding: 10px;

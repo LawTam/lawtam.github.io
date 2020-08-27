@@ -29,6 +29,12 @@ const Body = styled.div`
   flex-direction: column;
 `;
 
+const projects = [{
+  name: "project 1",
+  description: "description",
+  imageUrl: "/somepath",
+}];
+
 export default function Projects() {
   return(
     <>
@@ -39,6 +45,20 @@ export default function Projects() {
           </div>
           
           <Body>
+
+            {projects.map((p) => {
+              const {name, description, url} = p;
+              return (
+                <>
+                  <div>
+                      {name}
+                  </div>
+                  <div>
+                      {description}
+                  </div>
+                </> 
+              );
+            })}
             <h2>- PROJECTS</h2>
             <div className="container">
               <div className="flex-row-container">
@@ -51,6 +71,9 @@ export default function Projects() {
                   <p> Used design thinking methodology to tackle some hot topics in
                     human-computer interaction.
                   </p>
+                  <div className="project-items">
+
+                  </div>
                 </div>
               </div>
             </div>
