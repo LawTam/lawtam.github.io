@@ -40,8 +40,8 @@ const PageBreak = styled.div`
 
 const LawrenceWrapper = styled.div`
   position: absolute;
-  right: -100px;
-  bottom: -200px;
+  right: -8vw;
+  bottom: -20vh;
 `;
 
 const Lawrence = styled.img`

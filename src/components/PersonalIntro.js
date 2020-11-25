@@ -8,7 +8,7 @@ import diamond from "../assets/2D/diamond.svg"
 
 const Intro = styled.div`
   position: relative;
-  padding-top: 8vw;
+  padding-top: 10vh;
 
   @media ${device.laptop}{
     padding-right: 20vw;
@@ -16,8 +16,9 @@ const Intro = styled.div`
 `;
 
 const Logo = styled.img`
-  height: calc(1rem + 4vmin);
+  height: calc(1.8rem + 4vmin);
   padding-right: 20px;
+  padding-top: 5px;
 `;
 
 const Diamond = styled.img`
@@ -35,7 +36,16 @@ export default function Personal_Intro() {
             <Logo src={logo} alt="author's logo"></Logo>
             <h1>Lawrence Tam.</h1>
           </div>
-          
+          <div className="body">
+            <h2>- INTRODUCTION</h2>
+            <h3> Hi, I'm Lawrence and I create websites and web apps.</h3>
+            <p> I have experience with product design, front-end dev, and entrepreneurship. Somehow, I found a way to combine my passions as a product manager!
+              <br></br><br></br>
+              Currently, I'm a Product Manager at INPEL, an innovative eLearning startup. I wish I could tell you more, but it's secret! However, I can tell you more about myself as you explore my site.
+              <br></br><br></br>
+              Update: Site under reconstruction!
+            </p>
+          </div>
 
         </Intro>
       </div>

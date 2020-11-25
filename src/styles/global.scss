@@ -15,7 +15,7 @@ html {
 }
 h1{
   font-family: 'Federant', cursive;
-  font-size: calc(1rem + 4vmin);
+  font-size: calc(2rem + 4vmin);
   font-weight: lighter;
   font-display: block;
   color: $primary-color;
@@ -25,7 +25,7 @@ h1{
 h2{
   font-family: 'Numans';
   font-weight: 300;
-  font-size: calc(0.3rem + 1vmin);
+  font-size: calc(0.5rem + 1vmin);
   color: $accent-color;
 }
 h3{
@@ -41,7 +41,7 @@ h4 {
 }
 p{
   font-family: 'Numans';
-  font-size: 12px;
+  font-size: calc(0.3rem + 1vmin);
 }
 button {
   margin-left: 80px;
@@ -90,6 +90,7 @@ button {
 .body{
   position: relative;
   top: 30px;
+  max-width: calc(25rem + 20vmin);
   padding-left: 5px;
   padding-right: 90px;
   display: flex;
