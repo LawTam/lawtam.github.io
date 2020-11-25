@@ -2,6 +2,7 @@
   "assets/models/welcome.glb": "assets/models/3cf8c191c90057fc28921f22dd921191.glb",
   "main.js": "render-page.js",
   "main.js.map": "render-page.js.map",
+  "static/HKUST.jpg": "static/HKUST-87d419697115a4acb3f254033b9fd769.jpg",
   "static/law_blur.png": "static/law_blur-649e2baf7ecb8a57bb7ce4032c976c87.png",
   "static/law_blur.webp": "static/law_blur-8f8f0640f9824187cfd900b18b6166ad.webp",
   "static/lawrence_blkwht.webp": "static/lawrence_blkwht-dcc780ead4320b786bea4f070fdf5a66.webp",
